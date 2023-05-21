@@ -22,7 +22,7 @@ services:
     build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
-      - static:/staticfiles/
+      - static:/static
   gateway:
     build: ./nginx/
     env_file: .env
