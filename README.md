@@ -1,61 +1,61 @@
-[![Actions Status](https://github.com/TwillightGolem/kittygram_final/workflows/main/badge.svg)](https://github.com/TwillightGolem/kittygram_final/actions)
+![main](https://github.com/TwillightGolem/kittygram_final/actions/workflows/main.yml/badge.svg)
 
-# Kittygram
-URL: 
-IP:
+<h1 align="center">Kittygram</h1>
 
-# Как работать с репозиторием финального задания
-1. ?
-2. Вы восхитительны
+<h1 align="center">https://kittygm.sytes.net</h1>
+
+# Описание проекта
+
+Данный учебный проект является финальным результатом изучения Docker и технологий Cl и CD.
+
+### Main features
+
+* Separated dev and production settings
+
+* Example app with custom user model
+
+* Bootstrap static files included
+
+* User registration and logging in as demo
+
+* Procfile for easy deployments
+
+* Separated requirements files
+
+* Postgres 13
+
+
 
 ### Как запустить проект:
 
-Клонировать репозиторий и перейти в него в командной строке:
+Установить программу контейнеризации Docker (версия 4.19.0), так же необходимо зарегистрироваться на DockerHub.
+
+Клонировать репозиторий:
+```
+git clone https://github.com/
+https://github.com/TwillightGolem/kittygram_final
+```
+В терминале выполнить команду:
 
 ```
-git clone https://github.com/yandex-praktikum/kittygram_backend.git
+docker compose -f docker-compose.production.yml up
 ```
 
-```
-cd kittygram_backend
-```
-
-Cоздать и активировать виртуальное окружение:
+После последовательно в терминале выполнить команды для миграций и сбора статики:
 
 ```
-python3 -m venv env
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+
+sudo docker compose -f docker-compose.production.yml exec backend cp -r collected_static/. ../backend_static/static/
 ```
+## Автор 
 
-* Если у вас Linux/macOS
+Яковлев Александр (TwillightGolem) 
 
-    ```
-    source env/bin/activate
-    ```
+## Обратная связь 
 
-* Если у вас windows
+Электронная почта - truenoae8694yaa@yandex.ru 
 
-    ```
-    source env/scripts/activate
-    ```
-
-```
-python3 -m pip install --upgrade pip
-```
-
-Установить зависимости из файла requirements.txt:
-
-```
-pip install -r requirements.txt
-```
-
-Выполнить миграции:
-
-```
-python3 manage.py migrate
-```
-
-Запустить проект:
-
-```
-python3 manage.py runserver
-```
+VK - https://vk.com/id23803491 
